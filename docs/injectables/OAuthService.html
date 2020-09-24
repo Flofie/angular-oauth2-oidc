@@ -1722,8 +1722,8 @@ to transmit the access_token to a service</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="2555"
-                            class="link-to-prism">projects/lib/src/oauth-service.ts:2555</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="2563"
+                            class="link-to-prism">projects/lib/src/oauth-service.ts:2563</a></div>
                 </td>
             </tr>
 
@@ -4779,8 +4779,8 @@ method silentRefresh.</p>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="2594"
-                            class="link-to-prism">projects/lib/src/oauth-service.ts:2594</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="2602"
+                            class="link-to-prism">projects/lib/src/oauth-service.ts:2602</a></div>
                 </td>
             </tr>
 
@@ -11518,7 +11518,15 @@ export class OAuthService extends AuthConfig implements OnDestroy {
       );
     }
 
-    this.createLoginUrl(additionalState, &#x27;&#x27;, null, false, params)
+    let addParams &#x3D; {};
+    let loginHint &#x3D; null;
+    if (typeof params &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+      loginHint &#x3D; params;
+    } else if (typeof params &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+      addParams &#x3D; params;
+    }
+
+    this.createLoginUrl(additionalState, loginHint, null, false, addParams)
       .then(this.config.openUri)
       .catch(error &#x3D;&gt; {
         console.error(&#x27;Error in initAuthorizationCodeFlow&#x27;);

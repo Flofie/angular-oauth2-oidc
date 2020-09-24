@@ -2543,14 +2543,13 @@ export class OAuthService extends AuthConfig implements OnDestroy {
         "loginUrl  must use HTTPS (with TLS), or config value for property 'requireHttps' must be set to 'false' and allow HTTP (without TLS)."
       );
     }
-    
+
     let addParams = {};
     let loginHint = null;
     if (typeof params === 'string') {
-        loginHint = params;
-    }
-    else if (typeof params === 'object') {
-        addParams = params;
+      loginHint = params;
+    } else if (typeof params === 'object') {
+      addParams = params;
     }
 
     this.createLoginUrl(additionalState, loginHint, null, false, addParams)

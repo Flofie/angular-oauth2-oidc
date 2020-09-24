@@ -94,5 +94,13 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "main": "dist/lib/bundles/angular-oauth2-oidc.umd.js",
+  "module": "dist/lib/fesm2015/angular-oauth2-oidc.js",
+  "es2015": "dist/lib/fesm2015/angular-oauth2-oidc.js",
+  "esm2015": "dist/lib/esm2015/angular-oauth2-oidc.js",
+  "fesm2015": "dist/lib/fesm2015/angular-oauth2-oidc.js",
+  "typings": "dist/lib/angular-oauth2-oidc.d.ts",
+  "metadata": "dist/lib/angular-oauth2-oidc.metadata.json",
+  "sideEffects": false
 }
